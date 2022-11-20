@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .heroButton {
+    @apply px-2 sm:px-6 underline sm:no-underline sm:border sm:border-gray-700/70 rounded-full uppercase py-2 text-xs tracking-widest text-gray-500 transition-all hover:border-yellow-500/40 hover:text-yellow-500/70 cursor-pointer mx-1 underline-offset-4;
+  }
+
+  .tw-input {
+    @apply block w-full appearance-none rounded border-none border-yellow-500 bg-[#2C313A] py-3 px-4 leading-tight focus:outline focus:outline-[1px] focus:outline-offset-2 focus:outline-yellow-300 focus:ring-offset-transparent;
+  }
+  .tw-label {
+    @apply py-1 block text-xs font-semibold uppercase tracking-wide;
+  }
+
+  .tb {
+    @apply border-yellow-500 border;
+  }
+  
+}
+
+html {
+  overflow: hidden;
+  background-color: #282c34;
+  scroll-behavior: smooth;
+}
+
+.overflow-mobile {
+  -webkit-overflow-scrolling: touch;
+}
+
+
+@supports (-webkit-touch-callout: none) {
+  body, .site {
+    min-height: -webkit-fill-available;
+    max-height: 88vh;
+  }
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+}
+
+/* Moves reCaptcha badge to the left side of the window */
+.grecaptcha-badge {
+  width: 70px !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  left: 5px !important;
+}
+.grecaptcha-badge:hover {
+  width: 256px !important;
+}
+.grecaptcha-badge {
+  opacity: 0 !important;
+}
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* The hack for Safari */
+    height: -webkit-fill-available;
+  }
+}
+
+
