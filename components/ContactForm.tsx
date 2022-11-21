@@ -101,7 +101,7 @@ export default function ContactForm({}: Props) {
               type="submit"
               className="shadow bg-yellow-500/90 hover:bg-yellow-500 focus:shadow-outline focus:outline-none font-bold py-3 px-12 rounded  active:scale-90 transition duration-150 cursor-pointer w-full disabled:cursor-not-allowed disabled:active:scale-100 disabled:animate-pulse"
               disabled={btnToggle ? true : false}>
-              {btnToggle ? ( <Player autoplay loop={true} renderer="svg" src="https://assets7.lottiefiles.com/packages/lf20_a2gg7umq.json" style={{ height: "20px", width: "80px", }} /> ) : ( "Send" )}
+              {btnToggle ? <Player autoplay loop={true} renderer="svg" src="https://assets7.lottiefiles.com/packages/lf20_a2gg7umq.json" style={{ height: "20px", width: "80px", }} />  : "Send" }
             </button>
           </div>
         </div>
