@@ -54,7 +54,7 @@ const Home = ({ siteInfo, userInfo, experience, projects, skills, socials }: Pro
             width: "100px",
           }}
         />
-        <h1 className="uppercase tracking-[16px] text-gray-500 text-2xl">Loading...</h1>
+        <h1 className="uppercase tracking-[16px] text-white text-2xl">Loading...</h1>
       </div>
     );
   };
