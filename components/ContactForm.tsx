@@ -30,8 +30,8 @@ export default function ContactForm({}: Props) {
   const sendEmail = async (e: any) => {
     e.preventDefault();
     setBtnToggle(true);
-
-    await captcha.current.executeAsync();
+    
+    await captcha.current.executeAsync(); // In production it stops here and breaks the code.
     const token = await captcha.current.getValue();
 
     const templateParams = {
@@ -99,23 +99,9 @@ export default function ContactForm({}: Props) {
           <div className="w-full">
             <button
               type="submit"
-              className="shadow bg-yellow-500/90 hover:bg-yellow-500 focus:shadow-outline focus:outline-none font-bold py-3 px-12 rounded  active:scale-90 transition duration-150 cursor-pointer w-full disabled:cursor-not-allowed disabled:active:scale-100 disabled:animate-pulse "
-              disabled={btnToggle ? true : false}
-            >
-              {btnToggle ? (
-                <Player
-                  autoplay
-                  loop={true}
-                  renderer="svg"
-                  src="https://assets7.lottiefiles.com/packages/lf20_a2gg7umq.json"
-                  style={{
-                    height: "20px",
-                    width: "80px",
-                  }}
-                />
-              ) : (
-                "Send"
-              )}
+              className="shadow bg-yellow-500/90 hover:bg-yellow-500 focus:shadow-outline focus:outline-none font-bold py-3 px-12 rounded  active:scale-90 transition duration-150 cursor-pointer w-full disabled:cursor-not-allowed disabled:active:scale-100 disabled:animate-pulse"
+              disabled={btnToggle ? true : false}>
+              {btnToggle ? ( <Player autoplay loop={true} renderer="svg" src="https://assets7.lottiefiles.com/packages/lf20_a2gg7umq.json" style={{ height: "20px", width: "80px", }} /> ) : ( "Send" )}
             </button>
           </div>
         </div>
