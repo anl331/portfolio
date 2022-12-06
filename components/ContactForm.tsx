@@ -16,7 +16,7 @@ export default function ContactForm({}: Props) {
   const email = useRef<any>();
   const message = useRef<any>();
   const [toggle, setToggle] = useState(false);
-  const [btnToggle, setBtnToggle] = useState(true);
+  const [btnToggle, setBtnToggle] = useState(false);
   const [msgSent, setMsgSent] = useState(false);
 
   const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID!;

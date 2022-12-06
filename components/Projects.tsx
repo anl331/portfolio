@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Project } from "../typings";
 import { urlFor } from "../sanity";
 import { isIOS, osVersion } from "react-device-detect";
+import _, { sortBy } from 'underscore';
 
 
 type Props = {
@@ -10,6 +11,8 @@ type Props = {
 };
 
 export default function Projects({ projects }: Props) {
+  const sortedPorjects = _.sortBy(projects, 'position')
+
 
   return (
     <motion.div
@@ -26,12 +29,12 @@ export default function Projects({ projects }: Props) {
       </div>
 
       <div className=" relative flex items-center flex-grow w-full snap-x snap-mandatory scrollbar scrollbar-track-transparent scrollbar-thumb-[#2C313A] scrollbar-thumb-rounded-full z-20 ">
-        {projects?.map((project, i) => (
+        {sortedPorjects?.map((project, i) => (
           <div className="w-screen flex-shrink-0 snap-center snap-always flex flex-col space-y-5 items-center justify-center px-6" key={i}>
             <motion.img
               src={urlFor(project.image).url()}
               alt=""
-              className="max-w-[80%] sm:max-w-[42%]"
+              className="max-w-[80%] sm:max-w-[42%] "
               initial={{ y: -50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -41,7 +44,7 @@ export default function Projects({ projects }: Props) {
             <div className="max-w-3xl space-y-6">
               <h4 className="text-xl font-semibold sm:text-[1.4] md:text-[1.7rem] lg:text-4xl">
                 <span className="underline underline-offset-4 md:underline-offset-8 decoration-yellow-500">
-                  Case Study {i + 1} of {projects.length}:
+                  Project {i + 1} of {projects.length}:
                 </span>{" "}
                 {project.title}
               </h4>

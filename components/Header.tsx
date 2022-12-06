@@ -31,10 +31,6 @@ export default function Header({ socials }: Props) {
         {socials.map((social) => (
           <SocialIcon key={social._id} url={social.url} bgColor="transparent" fgColor="#6B7280" />
         ))}
-
-        {/* <SocialIcon url="https://www.instagram.com/_itsanl" bgColor="transparent" fgColor="#6B7280" />
-        <SocialIcon url="https://www.twitter.com/_itsanl" bgColor="transparent" fgColor="#6B7280" />
-        <SocialIcon url="https://www.linkedin.com/_itsanl" bgColor="transparent" fgColor="#6B7280" /> */}
       </motion.div>
 
       <motion.div

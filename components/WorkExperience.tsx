@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
 import { Experience } from "../typings";
 import { isIOS, osVersion } from "react-device-detect";
+import _, { sortBy } from 'underscore';
 
 
 type Props = {
@@ -10,6 +11,7 @@ type Props = {
 };
 
 export default function WorkExperience({experience}: Props) {
+  const sortedExperiences = _.sortBy(experience, 'dateStarted').reverse()
 
   return (
     <motion.div 
@@ -28,8 +30,8 @@ export default function WorkExperience({experience}: Props) {
         </h3>
       </div>
 
-        <div className={`relative flex items-center ${experience.length > 3 ? "" :"sm:justify-center"} flex-grow w-full snap-x snap-mandatory scrollbar scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#2C313A] scrollbar-thumb-rounded-full scrollbar-thin mt-5 pl-4 pr-5`}>
-          {experience?.map(experience => (
+        <div className={` relative flex items-center ${experience.length > 3 ? "" :"sm:justify-center"} flex-grow w-full snap-x snap-mandatory scrollbar scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#2C313A] scrollbar-thumb-rounded-full scrollbar-thin mt-5 pl-4 pr-5`}>
+          {sortedExperiences?.map(experience => (
             <ExperienceCard  key={experience._id} experience={experience}/>
           ))}
         </div>

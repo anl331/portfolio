@@ -8,6 +8,11 @@ export default {
       title: "title",
       description: "Title of the project",
       type: "string",
+    }, 
+    {
+      name: "position",
+      title: "Position",
+      type: "string",
     }, {
       name: "image",
       title: "Image",

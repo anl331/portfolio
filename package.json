@@ -23,7 +23,8 @@
     "react-simple-typewriter": "^4.0.5",
     "react-social-icons": "^5.15.0",
     "tailwind-scrollbar": "^2.0.1",
-    "tailwindcss-animation-delay": "^1.0.7"
+    "tailwindcss-animation-delay": "^1.0.7",
+    "underscore": "^1.13.6"
   },
   "devDependencies": {
     "@emailjs/browser": "^3.9.1",
@@ -32,6 +33,7 @@
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "@types/react-google-recaptcha": "^2.1.5",
+    "@types/underscore": "^1.11.4",
     "autoprefixer": "^10.4.12",
     "postcss": "^8.4.19",
     "react-google-recaptcha": "^2.1.0",
