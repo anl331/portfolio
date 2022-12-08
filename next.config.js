@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['cdn.sanity.io'],
-  }
+  },
 }
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({

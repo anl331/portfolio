@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import ContactForm from "./ContactForm";
+const ContactForm = dynamic(() => import("./ContactForm"));
 import {  isIOS, osVersion } from "react-device-detect";
 
 

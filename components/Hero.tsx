@@ -28,9 +28,9 @@ export default function Hero({ userInfo }: Props) {
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.25, delay: 2.9 }}
           viewport={{ once: true }}
-          className="relative flex-shrink-0 w-40 h-40 mx-auto rounded-full overflow-hidden"
+          className=""
         >
-          <Image layout="fill" objectFit="cover" objectPosition="center" src={urlFor(userInfo.heroImage).url()} alt=""  />
+          <Image className="flex-shrink-0 rounded-full mx-auto" width={150} height={150} objectFit="cover" objectPosition="center" src={urlFor(userInfo.heroImage).url()} alt=""  />
         </motion.div>
 
         <div className="w-screen flex flex-col items-center justify-center">
@@ -55,22 +55,13 @@ export default function Hero({ userInfo }: Props) {
             transition={{ duration: 0.25, delay: 2.9 }}
             viewport={{ once: true }}
           >
-            <a href="/#about"><p className="heroButton">About</p></a>
-            <a href="/#experience"><p className="heroButton">Experience</p></a>
-            <a href="/#skills"><p className="heroButton">Skills</p></a>
-            <a href="/#projects"><p className="heroButton">Projects</p></a>
+            <a href="/#about" aria-label="About me"><p className="heroButton">About</p></a>
+            <a href="/#experience" aria-label="Work Experience"><p className="heroButton">Work Experience</p></a>
+            <a href="/#skills" aria-label="My Skills"><p className="heroButton">Skills</p></a>
+            <a href="/#projects" aria-label="My Projects"><p className="heroButton">Projects</p></a>
           </motion.div>
         </div>
       </div>
     </div>
-
-    /* 
-      
-      TODO:
-
-      1. Disable contact form button when sending message
-      2. Fix lagging <Hero/> laggy animation - possiuble fix using variants from framer motion 
-      
-      */
   );
 }

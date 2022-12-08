@@ -1,9 +1,10 @@
 import React from "react";
 import { useState, useRef } from "react";
+import dynamic from "next/dynamic";
 import ReCAPTCHA from "react-google-recaptcha";
+// const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
-
 type Props = {};
 
 export default function ContactForm({}: Props) {
@@ -17,6 +18,7 @@ export default function ContactForm({}: Props) {
   const [toggle, setToggle] = useState(false);
   const [btnToggle, setBtnToggle] = useState(false);
   const [msgSent, setMsgSent] = useState(false);
+  const [recaptchaNeeded, setRecaptchaNeeded] = useState(false);
 
   const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID!;
   const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID!;
@@ -30,6 +32,7 @@ export default function ContactForm({}: Props) {
     e.preventDefault();
     setBtnToggle(true);
     
+    setRecaptchaNeeded(true);
     await captcha.current.executeAsync(); 
     const token = await captcha.current.getValue();
 
@@ -41,6 +44,7 @@ export default function ContactForm({}: Props) {
       email: email.current.value,
       message: message.current.value,
     };
+
 
     await emailjs.send(serviceID, templateID, templateParams, publicKey).then(
       (result) => {
@@ -71,30 +75,30 @@ export default function ContactForm({}: Props) {
       <form method="POST" ref={form} onSubmit={sendEmail} id="myForm" className="w-screen px-5 min-w-[200px] max-w-lg ">
         <div className="flex flex-wrap -mx-3 mb-1 ">
           <div className="w-full md:w-1/2 px-3 mb-1 md:mb-0">
-            <label className="tw-label">Name*</label>
-            <input ref={name} className="tw-input" type="text" disabled={btnToggle ? true : false} required />
+            <label htmlFor="name" className="tw-label">Name*</label>
+            <input ref={name} className="tw-input" type="text" aria-label="Name" disabled={btnToggle ? true : false} onChange={() => setRecaptchaNeeded(true)} required />
           </div>
           <div className="w-full md:w-1/2 px-3">
-            <label className="tw-label">Telephone*</label>
-            <input className="tw-input" type="tel" ref={telephone} disabled={btnToggle ? true : false} required />
+            <label htmlFor="telephone" className="tw-label">Telephone*</label>
+            <input className="tw-input" type="tel" ref={telephone} aria-label="Telephone" disabled={btnToggle ? true : false} required />
           </div>
         </div>
 
         <div className="flex flex-wrap -mx-3 mb-1">
           <div className="w-full px-3">
-            <label className="tw-label">E-mail*</label>
-            <input className="tw-input" type="email" ref={email} disabled={btnToggle ? true : false} required />
+            <label htmlFor="email" className="tw-label">E-mail*</label>
+            <input className="tw-input" type="email" aria-label="Email" ref={email} disabled={btnToggle ? true : false} required />
           </div>
         </div>
 
         <div className="flex flex-wrap -mx-3 mb-1">
           <div className="w-full px-3">
-            <label className="tw-label">Message*</label>
-            <textarea className="no-resize tw-input h-48 resize-none" ref={message} disabled={btnToggle ? true : false} required></textarea>
+            <label htmlFor="message" className="tw-label">Message*</label>
+            <textarea className="no-resize tw-input h-48 resize-none" aria-label="Message" ref={message} disabled={btnToggle ? true : false} required></textarea>
           </div>
         </div>
 
-        {<ReCAPTCHA className="mb-5" ref={captcha} sitekey={siteKey} size="invisible" />}
+        {recaptchaNeeded && <ReCAPTCHA className="mb-5" ref={captcha} sitekey={siteKey} size="invisible" />}
 
         <div className="md:flex md:items-center">
           <div className="w-full">

@@ -32,7 +32,7 @@ export default function About({ userInfo }: Props) {
       <div className="h-20 " />
 
       <div className="flex flex-col-reverse pl-5 pb-5">
-        <h3 className="uppercase tracking-[16px] text-gray-500 text-2xl">About</h3>
+        <h2 className="uppercase tracking-[16px] text-gray-500 text-2xl">About</h2>
       </div>
 
       <div className="relative mx-auto space-y-5 w-full md:grid grid-cols-3">
@@ -50,9 +50,9 @@ export default function About({ userInfo }: Props) {
 
 
         <div className="space-y-6 sm:px-10 col-span-2 flex flex-col justify-center ">
-          <h4 className="text-2xl font-semibold sm:text-[1.4] md:text-[1.7rem] lg:text-4xl">
+          <h2 className="text-2xl font-semibold sm:text-[1.4] md:text-[1.7rem] lg:text-4xl">
             Here is <span className="underline underline-offset-4 md:underline-offset-8 decoration-yellow-500">some</span> background
-          </h4>
+          </h2>
           <div className={!isMobile ? "space-y-4" : "space-y-4 snap-end snap-always pb-6"}>
             <p className="text-sm lg:text-base">{userInfo.backgroundInformation}</p>
             <p className="text-sm lg:text-base">{userInfo.backgroundInformation2}</p>
