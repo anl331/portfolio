@@ -1,15 +1,18 @@
 import type { GetStaticProps } from "next";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import About from "../components/About";
-import Contact from "../components/Contact";
-import WorkExperience from "../components/WorkExperience";
+
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import Projects from "../components/Projects";
-import Skills from "../components/Skills";
-import { Player } from "@lottiefiles/react-lottie-player";
-// import useWindowDimensions from "../hooks/useWindowDimensions";
+
+// Dynamic Imports
+const About = dynamic(() => import("../components/About"));
+const Contact = dynamic(() => import("../components/Contact"));
+const WorkExperience = dynamic(() => import("../components/WorkExperience"));
+const Projects = dynamic(() => import("../components/Projects"));
+const Skills = dynamic(() => import("../components/Skills"));
+
 import { isIOS, deviceDetect, osVersion } from "react-device-detect";
 import { Experience, UserInfo, Project, Skill, Social, SiteInfo } from "../typings";
 import { fetchExperience } from "../utils/fetchExperience";
@@ -30,50 +33,22 @@ type Props = {
 };
 
 const Home = ({ siteInfo, userInfo, experience, projects, skills, socials }: Props) => {
-  const [toggle, setToggle] = useState(false);
 
+  return (
+    <div
+      className={`bg-[#282C34] text-white snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth z-0 scrollbar scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#303640] scrollbar-thumb-rounded-full scrollbar-thin ${
+        osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"
+      }`}
+    >
+      <Head>
+        <title>
+          Alfredo Natal | Portfolio
+        </title>
+        <link rel="icon" href={urlFor(siteInfo?.favicon).url()} />
+        <meta name="theme-color" content="#282C34"></meta>
+      </Head>
 
-  const Loading = function () {
-    return (
-      <div className={`flex flex-col bg-[#282C34] justify-center items-center  overscroll-none ${osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"}`}>
-        <Head>
-          <title>
-            Loading...
-          </title>
-          <link rel="icon" href={urlFor(siteInfo?.favicon).url()} />
-          <meta name="theme-color" content="#282C34"></meta>
-        </Head>
-
-        <Player
-          autoplay
-          loop={true}
-          renderer="svg"
-          src="https://assets1.lottiefiles.com/packages/lf20_u38thn1f.json"
-          style={{
-            height: "100px",
-            width: "100px",
-          }}
-        />
-        <h1 className="uppercase tracking-[16px] text-white text-2xl">Loading...</h1>
-      </div>
-    );
-  };
-
-  const Site = function () {
-    return (
-      <div
-        className={`bg-[#282C34] text-white snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth z-0 scrollbar scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#303640] scrollbar-thumb-rounded-full scrollbar-thin ${
-          osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"
-        }`}
-      >
-        <Head>
-          <title>
-            {userInfo?.firstName} {userInfo?.lastName} | Portfolio
-          </title>
-          <link rel="icon" href={urlFor(siteInfo?.favicon).url()} />
-          <meta name="theme-color" content="#282C34"></meta>
-        </Head>
-
+      <main>
         <Header socials={socials} />
 
         <section id="hero" className="snap-start snap-always">
@@ -89,36 +64,20 @@ const Home = ({ siteInfo, userInfo, experience, projects, skills, socials }: Pro
         </section>
 
         <section id="skills" className="snap-start snap-always">
-        <Skills skills={skills} />
+          <Skills skills={skills} />
         </section>
 
         <section id="projects" className="snap-start snap-always">
-        <Projects projects={projects} />
+          <Projects projects={projects} />
         </section>
 
         <section id="contact" className="snap-start snap-always overflow-none">
-        <Contact />
+          <Contact />
         </section>
-      </div>
-    );
-  };
 
-  function HandleLoading() {
-    setTimeout(() => {
-      setToggle(true);
-    }, 3000);
 
-    if (toggle) {
-      return <Site />;
-    } else {
-      return <Loading />;
-    }
-  }
-
-  return (
-    <>
-      <HandleLoading />
-    </>
+      </main>
+    </div>
   );
 };
 

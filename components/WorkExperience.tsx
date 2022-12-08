@@ -15,7 +15,7 @@ export default function WorkExperience({experience}: Props) {
 
   return (
     <motion.div 
-    className={`flex flex-col items-center text-center justify-center mx-auto relative max-w-7xl  ${osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"}`}
+    className={`flex flex-col items-center text-center justify-center mx-auto max-w-7xl  ${osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"}`}
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     // viewport={{ once: true }}
@@ -30,7 +30,7 @@ export default function WorkExperience({experience}: Props) {
         </h3>
       </div>
 
-        <div className={` relative flex items-center ${experience.length > 3 ? "" :"sm:justify-center"} flex-grow w-full snap-x snap-mandatory scrollbar scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#2C313A] scrollbar-thumb-rounded-full scrollbar-thin mt-5 pl-4 pr-5`}>
+        <div className={` relative flex items-center ${experience.length > 3 ? "" :"sm:justify-center"} flex-grow w-full snap-x snap-mandatory  scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#2C313A] scrollbar-thumb-rounded-full scrollbar-thin mt-5 pl-4 pr-5`}>
           {sortedExperiences?.map(experience => (
             <ExperienceCard  key={experience._id} experience={experience}/>
           ))}

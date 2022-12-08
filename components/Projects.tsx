@@ -3,16 +3,15 @@ import { motion } from "framer-motion";
 import { Project } from "../typings";
 import { urlFor } from "../sanity";
 import { isIOS, osVersion } from "react-device-detect";
-import _, { sortBy } from 'underscore';
-
+import _, { sortBy } from "underscore";
+import Image from "next/image";
 
 type Props = {
   projects: Project[];
 };
 
 export default function Projects({ projects }: Props) {
-  const sortedPorjects = _.sortBy(projects, 'position')
-
+  const sortedPorjects = _.sortBy(projects, "position");
 
   return (
     <motion.div
@@ -30,8 +29,9 @@ export default function Projects({ projects }: Props) {
 
       <div className=" relative flex items-center flex-grow w-full snap-x snap-mandatory scrollbar scrollbar-track-transparent scrollbar-thumb-[#2C313A] scrollbar-thumb-rounded-full z-20 ">
         {sortedPorjects?.map((project, i) => (
-          <div className="w-screen flex-shrink-0 snap-center snap-always flex flex-col space-y-5 items-center justify-center px-6" key={i}>
-            <motion.img
+          <div className=" relative w-screen flex-shrink-0 snap-center snap-always flex flex-col space-y-5 items-center justify-center px-6" key={i}>
+            
+            {/* <motion.img
               src={urlFor(project.image).url()}
               alt=""
               className="max-w-[80%] sm:max-w-[42%] "
@@ -39,7 +39,17 @@ export default function Projects({ projects }: Props) {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-            />
+            /> */}
+
+            <motion.div
+              initial={{ y: -50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="relative max-w-[80%] sm:max-w-[42%] h-auto w-full aspect-[5/3]"
+            >
+              <Image layout="fill" objectFit="cover" objectPosition="center" src={urlFor(project.image).url()} alt="" />
+            </motion.div>
 
             <div className="max-w-3xl space-y-6">
               <h4 className="text-xl font-semibold sm:text-[1.4] md:text-[1.7rem] lg:text-4xl">
@@ -53,7 +63,7 @@ export default function Projects({ projects }: Props) {
                 <p className="text-xs text-gray-500">Tech Stacked Used</p>
                 <div className="flex items-center justify-center space-x-2">
                   {project.technologies.map((techStack) => (
-                    <img src={urlFor(techStack.image).url()} key={techStack._id} alt="" className="w-10 h-10" />
+                    <Image width={42} height={42} objectFit="cover" objectPosition="center" src={urlFor(techStack.image).url()} key={techStack._id}  alt="" />
                   ))}
                 </div>
               </div>

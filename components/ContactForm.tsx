@@ -3,7 +3,6 @@ import { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
-import { Player } from "@lottiefiles/react-lottie-player";
 
 type Props = {};
 
@@ -31,8 +30,9 @@ export default function ContactForm({}: Props) {
     e.preventDefault();
     setBtnToggle(true);
     
-    await captcha.current.executeAsync(); // In production it stops here and breaks the code.
+    await captcha.current.executeAsync(); 
     const token = await captcha.current.getValue();
+
 
     const templateParams = {
       "g-recaptcha-response": token,
@@ -48,6 +48,7 @@ export default function ContactForm({}: Props) {
         setToggle(true);
         form.current.reset();
         setBtnToggle(false);
+        captcha.current.reset();
         setTimeout(() => {
           setMsgSent(false);
           setToggle(false);
@@ -101,7 +102,7 @@ export default function ContactForm({}: Props) {
               type="submit"
               className="shadow bg-yellow-500/90 hover:bg-yellow-500 focus:shadow-outline focus:outline-none font-bold py-3 px-12 rounded  active:scale-90 transition duration-150 cursor-pointer w-full disabled:cursor-not-allowed disabled:active:scale-100 disabled:animate-pulse h-12"
               disabled={btnToggle ? true : false}>
-              {btnToggle ? <Player autoplay={true} loop={true}  src="https://assets7.lottiefiles.com/packages/lf20_a2gg7umq.json" style={{ height: "20px", width: "80px", }} />  : "Send" }
+              {btnToggle ? <div className="spinner-border animate-spin inline-block w-5 h-5 border-4 rounded-full" />  : "Send" }
             </button>
           </div>
         </div>

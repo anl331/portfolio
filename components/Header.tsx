@@ -52,7 +52,7 @@ export default function Header({ socials }: Props) {
         viewport={{ once: true }}
       >
         <SocialIcon url="#contact" network="email" bgColor="transparent" fgColor="#6B7280" />
-        <p className="uppercase hidden sm:inline-flex text-sm">Get In Touch</p>
+        <a href="#contact"><p className="uppercase hidden sm:inline-flex text-sm">Get In Touch</p></a>
       </motion.div>
     </header>
   );
