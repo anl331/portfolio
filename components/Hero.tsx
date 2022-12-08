@@ -49,28 +49,16 @@ export default function Hero({ userInfo }: Props) {
           </h1>
 
           <motion.div
-            className="pt-6 sm:space-x-4 flex flex-wrap px-5 "
+            className="pt-6 sm:space-x-4 flex flex-wrap px-5 -space-x-2"
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.25, delay: 2.9 }}
             viewport={{ once: true }}
           >
-            <a href="/#about">
-              {" "}
-              <p className="heroButton">About</p>{" "}
-            </a>
-            <a href="/#experience">
-              {" "}
-              <p className="heroButton">Experience</p>{" "}
-            </a>
-            <a href="/#skills">
-              {" "}
-              <p className="heroButton">Skills</p>{" "}
-            </a>
-            <a href="/#projects">
-              {" "}
-              <p className="heroButton">Projects</p>{" "}
-            </a>
+            <a href="/#about"><p className="heroButton">About</p></a>
+            <a href="/#experience"><p className="heroButton">Experience</p></a>
+            <a href="/#skills"><p className="heroButton">Skills</p></a>
+            <a href="/#projects"><p className="heroButton">Projects</p></a>
           </motion.div>
         </div>
       </div>
