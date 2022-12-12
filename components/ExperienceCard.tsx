@@ -34,14 +34,14 @@ export default function ExperienceCard({ experience }: Props) {
           <p className="text-xs text-gray-500 py-2">Technology Used</p>
           <div className="flex space-x-1 overflow-x-auto">
             {experience.technology.map((techStack) => (
-              <Image width={36} height={36} objectFit="cover" objectPosition="center" src={urlFor(techStack.image).url()}  alt="" />
+              <Image key={techStack._id} width={36} height={36} objectFit="cover" objectPosition="center" src={urlFor(techStack.image).url()}  alt="" />
             ))}
           </div>
         </div>
 
         <div>
           <p className="text-xs text-gray-500 py-2">Highlights</p>
-          <ul className="list-disc space-y-4 ml-3 text-xs sm:text-sm pl-4 pr-1 overflow-y-auto h-[250px] sm:h-[235px] overflow-mobile scrollbar scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#303640] scrollbar-thumb-rounded-full scrollbar-thin">
+          <ul className="list-disc space-y-4 ml-3 text-xs sm:text-sm pl-4 pr-1 overflow-y-auto h-[250px] sm:h-[235px] overflow-mobile scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#303640] scrollbar-thumb-rounded-full scrollbar-thin">
             {experience.highlights.map((highlight, i) => (
               <li key={i}>{highlight}</li>
             ))}

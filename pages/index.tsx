@@ -23,6 +23,7 @@ import { fetchUserInfo } from "../utils/fetchUserInfo";
 import { fetchSiteInfo } from "../utils/fetchSiteInfo";
 import { urlFor } from "../sanity";
 
+
 type Props = {
   siteInfo: SiteInfo;
   userInfo: UserInfo;
@@ -33,17 +34,19 @@ type Props = {
 };
 
 const Home = ({ siteInfo, userInfo, experience, projects, skills, socials }: Props) => {
+  const queryEncode = encodeURIComponent(`*[ _type == "userInfo"][0]`);
+  const url = `https://6j55bdp8.api.sanity.io/v2021-10-21/data/query/production?query=${queryEncode}`;
+
+  console.log(url)
 
   return (
     <div
-      className={`bg-[#282C34] text-white snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth z-0 scrollbar scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#303640] scrollbar-thumb-rounded-full scrollbar-thin ${
+      className={`bg-[#282C34] text-white snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth z-0  scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#303640] scrollbar-thumb-rounded-full scrollbar-thin ${
         osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"
       }`}
     >
       <Head>
-        <title>
-          Alfredo Natal | Portfolio
-        </title>
+        <title>Alfredo Natal | Portfolio</title>
         <link rel="icon" href={urlFor(siteInfo?.favicon).url()} />
         <meta name="theme-color" content="#282C34"></meta>
         <meta name="description" content="A personal portfolio for Alfredo Natal to illustrate his work and experience."></meta>
@@ -75,8 +78,6 @@ const Home = ({ siteInfo, userInfo, experience, projects, skills, socials }: Pro
         <section id="contact" className="snap-start snap-always overflow-none">
           <Contact />
         </section>
-
-
       </main>
     </div>
   );

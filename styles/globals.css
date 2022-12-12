@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 @layer components {
+  .scaleBtn {
+    @apply active:scale-90 transition-all duration-150
+  }
+
   .heroButton {
-    @apply px-2 sm:px-6 underline sm:no-underline sm:border sm:border-gray-700/70 rounded-full uppercase py-2 text-xs tracking-widest text-gray-500 transition-all hover:border-yellow-500/40 hover:text-yellow-500/70 cursor-pointer mx-1 underline-offset-4 active:scale-90 transition duration-150 ;
+    @apply px-2 sm:px-6 underline sm:no-underline sm:border sm:border-gray-700/70 rounded-full uppercase py-2 text-xs tracking-widest text-gray-500 hover:border-yellow-500/40 hover:text-yellow-500/70 cursor-pointer mx-1 underline-offset-4 scaleBtn;
+  }
+
+  .projectButton {
+    @apply px-6 border border-gray-700/70 rounded-full uppercase pb-2 pt-1 text-xs tracking-widest text-gray-500 hover:border-yellow-500/40 hover:text-yellow-500/70 cursor-pointer underline-offset-4 scaleBtn;
   }
 
   .tw-input {
@@ -17,7 +25,6 @@
   .tb {
     @apply border-yellow-500 border;
   }
-  
 }
 
 html {
@@ -30,15 +37,19 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 
-
 @supports (-webkit-touch-callout: none) {
-  body, .site {
+  body,
+  .site {
     min-height: -webkit-fill-available;
     max-height: 88vh;
   }
 }
 
-@supports (font: -apple-system-body) and (-webkit-appearance: none) { img[loading="lazy"] { clip-path: inset(0.6px) } }
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  img[loading="lazy"] {
+    clip-path: inset(0.6px);
+  }
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -67,5 +78,3 @@ input:-webkit-autofill:active {
     height: -webkit-fill-available;
   }
 }
-
-

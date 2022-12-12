@@ -29,12 +29,12 @@ export default function Header({ socials }: Props) {
         viewport={{ once: true }}
       >
         {socials.map((social) => (
-          <SocialIcon key={social._id} url={social.url} bgColor="transparent" fgColor="#6B7280" />
+          <SocialIcon key={social._id} url={social.url} bgColor="transparent" fgColor="currentColor" className="text-gray-500 hover:text-yellow-500 scaleBtn"/>
         ))}
       </motion.div>
 
       <motion.div
-        className="flex flex-row items-center text-gray-500 cursor-pointer"
+        className="flex flex-row items-center text-gray-500 cursor-pointer group"
         initial={{
           x: 500,
           opacity: 0,
@@ -51,8 +51,8 @@ export default function Header({ socials }: Props) {
         }}
         viewport={{ once: true }}
       >
-        <SocialIcon url="#contact" network="email" bgColor="transparent" fgColor="#6B7280" />
-        <a href="#contact"aria-label="Get In Touch"><p className="uppercase hidden sm:inline-flex text-sm">Get In Touch</p></a>
+        <SocialIcon url="#contact" network="email" bgColor="transparent" fgColor="currentColor" className="text-gray-500 group-hover:text-yellow-500 scaleBtn" />
+        <a href="#contact"aria-label="Get In Touch"><p className="uppercase hidden sm:inline-flex text-sm scaleBtn group-hover:text-yellow-500">Get In Touch</p></a>
       </motion.div>
     </header>
   );

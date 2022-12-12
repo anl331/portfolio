@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       name: "title",
-      title: "title",
+      title: "title", 
       description: "Title of the project",
       type: "string",
     }, 
@@ -13,7 +13,8 @@ export default {
       name: "position",
       title: "Position",
       type: "string",
-    }, {
+    }, 
+    {
       name: "image",
       title: "Image",
       type: "image",

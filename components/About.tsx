@@ -53,9 +53,9 @@ export default function About({ userInfo }: Props) {
           <h2 className="text-2xl font-semibold sm:text-[1.4] md:text-[1.7rem] lg:text-4xl">
             Here is <span className="underline underline-offset-4 md:underline-offset-8 decoration-yellow-500">some</span> background
           </h2>
-          <div className={!isMobile ? "space-y-4" : "space-y-4 snap-end snap-always pb-6"}>
+          <div className={!isMobile ? "space-y-4" : "space-y-4 snap-center snap-always pb-6"}>
             <p className="text-sm lg:text-base">{userInfo.backgroundInformation}</p>
-            <p className="text-sm lg:text-base">{userInfo.backgroundInformation2}</p>
+            <p className="text-sm lg:text-base -">{userInfo.backgroundInformation2}</p>
           </div>
         </div>
       </div>
