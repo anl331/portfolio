@@ -25,7 +25,7 @@ export default function About({ userInfo }: Props) {
         osVersion >= "15.4" && isIOS ? "min-h-[100svh]" : "min-h-screen"
       }`}
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      whileInView={{ opacity: 1 }} 
       transition={{ duration: 1 }}
       // viewport={{ once: true }}
     >
