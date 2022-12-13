@@ -75,25 +75,25 @@ export default function ContactForm({}: Props) {
         <div className="flex flex-wrap -mx-3 mb-1 ">
           <div className="w-full md:w-1/2 px-3 mb-1 md:mb-0">
             <label htmlFor="name" className="tw-label">Name*</label>
-            <input ref={name} className="tw-input" type="text" aria-label="Name" disabled={btnToggle ? true : false} onChange={() => setRecaptchaNeeded(true)} required />
+            <input ref={name} className="tw-input" name="name" type="text" aria-label="Name" disabled={btnToggle ? true : false} onChange={() => setRecaptchaNeeded(true)} required />
           </div>
           <div className="w-full md:w-1/2 px-3">
             <label htmlFor="telephone" className="tw-label">Telephone*</label>
-            <input className="tw-input" type="tel" ref={telephone} aria-label="Telephone" disabled={btnToggle ? true : false} required />
+            <input className="tw-input" name="telephone" type="tel" ref={telephone} aria-label="Telephone" disabled={btnToggle ? true : false} required />
           </div>
         </div>
 
         <div className="flex flex-wrap -mx-3 mb-1">
           <div className="w-full px-3">
             <label htmlFor="email" className="tw-label">E-mail*</label>
-            <input className="tw-input" type="email" aria-label="Email" ref={email} disabled={btnToggle ? true : false} required />
+            <input className="tw-input" name="email" type="email" aria-label="Email" ref={email} disabled={btnToggle ? true : false} required />
           </div>
         </div>
 
         <div className="flex flex-wrap -mx-3 mb-1">
           <div className="w-full px-3">
             <label htmlFor="message" className="tw-label">Message*</label>
-            <textarea className="no-resize tw-input h-48 resize-none" aria-label="Message" ref={message} disabled={btnToggle ? true : false} required></textarea>
+            <textarea className="no-resize tw-input h-48 resize-none" name="message" aria-label="Message" ref={message} disabled={btnToggle ? true : false} required></textarea>
           </div>
         </div>
 
