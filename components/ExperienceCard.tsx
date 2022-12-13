@@ -14,7 +14,7 @@ export default function ExperienceCard({ experience }: Props) {
       <div className="relative px-5 items-center flex w-full">
 
         <div
-          className="relative aspect-square h-auto w-28 md:w-52 rounded-full mr-5 overflow-hidden"
+          className="relative aspect-square h-auto w-28 md:w-52 rounded-lg md:rounded-full mr-5 overflow-hidden"
         >
           <Image layout="fill" objectFit="cover" objectPosition="center" src={urlFor(experience.companyImage).url()} alt=""  />
         </div>
