@@ -2,12 +2,14 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { Social } from "../typings";
+import { json } from "node:stream/consumers";
 
 type Props = {
   socials: Social[];
 };
 
 export default function Header({ socials }: Props) {
+  const workSocials = socials.filter((social) => ['LinkedIn', 'GitHub'].includes(social.title));
   return (
     <header className="sticky top-0 px-5 flex items-start justify-between max-w-7xl mx-auto z-50 xl:items-center bg-gradient-to-b from-[#282C34] via-[#282C34]/95 h-20 pt-3 min-w-full ">
       <motion.div
@@ -28,7 +30,7 @@ export default function Header({ socials }: Props) {
         }}
         viewport={{ once: true }}
       >
-        {socials.map((social) => (
+        {workSocials.map((social) => (
           <SocialIcon key={social._id} url={social.url} bgColor="transparent" fgColor="currentColor" className="text-gray-500 hover:text-yellow-500 scaleBtn"/>
         ))}
       </motion.div>
