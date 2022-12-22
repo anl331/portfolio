@@ -16,7 +16,7 @@
   }
 
   .tw-input {
-    @apply block w-full appearance-none rounded border-none border-yellow-500 bg-[#0A0A0A] py-3 px-4 leading-tight focus:outline focus:outline-[1px] focus:outline-offset-2 focus:outline-yellow-300 focus:ring-offset-transparent disabled:animate-pulse;
+    @apply block w-full appearance-none rounded border-none border-yellow-500 bg-[#0d0d0d] py-3 px-4 leading-tight focus:outline focus:outline-[1px] focus:outline-offset-2 focus:outline-yellow-300 focus:ring-offset-transparent disabled:animate-pulse;
   }
   .tw-label {
     @apply py-1 block text-xs font-semibold uppercase tracking-wide;
@@ -43,7 +43,7 @@ html {
 }
 
 .outline-border {
-  background: linear-gradient(45deg, #775b07, #c29950, #c43c93, #410f73, #8c0cb5, #ecc5e7);
+  background: conic-gradient(#ff0000 0%, #ffff00 16.67%, #00ff00 33.33%, #00ffff 50%, #0000ff 66.67%, #ff00ff 83.33%, #ff0000 100%);
 }
 
 .outer-card {

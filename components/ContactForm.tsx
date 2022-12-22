@@ -114,7 +114,7 @@ export default function ContactForm({}: Props) {
       <AnimatePresence>
         {toggle ? (
           <motion.div
-            className={`z-50 fixed text-sm rounded-md bg-[#303640] border-b-4 ${
+            className={`z-50 fixed text-sm rounded-md bg-[#0d0d0d] border-b-4 ${
               msgSent ? "border-yellow-500" : "border-red-500"
             } shadow-xl max-w-[475px] inline-flex left-5 sm:left-0 right-5 sm:right-5 top-2 sm:top-3 mx-auto p-5`}
             initial={{ y: -100 }}

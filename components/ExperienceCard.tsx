@@ -10,7 +10,7 @@ type Props = {
 
 export default function ExperienceCard({ experience }: Props) {
   return (
-    <article className="relative flex flex-col items-center flex-shrink-0 max-h-[480px] min-h-[480px] sm:max-h-[530px] sm:min-h-[530px] w-[350px] sm:w-[400px] md:w-[430px] snap-always snap-center px-3 py-5 pb-8 bg-[#060606] outline-border space-y-4 mb-2 scale-[.95] outer-card">
+    <article className="relative flex flex-col items-center flex-shrink-0 max-h-[480px] min-h-[480px] sm:max-h-[530px] sm:min-h-[530px] w-[350px] sm:w-[400px] md:w-[430px] snap-always snap-center px-3 py-5 pb-8 bg-[#0d0d0d] outline-border space-y-4 mb-2 scale-[.95] outer-card">
       <div className="z-10 relative px-5 items-center flex w-full ">
 
         <div
@@ -48,7 +48,7 @@ export default function ExperienceCard({ experience }: Props) {
           </ul>
         </div>
       </div>
-      <div className="z-0 absolute w-full h-full -top-4 rounded-lg scale-[0.98]  bg-[#060606]"/>
+      <div className="z-0 absolute w-full h-full -top-4 rounded-lg scale-[0.98]  bg-[#0d0d0d]"/>
     </article>
   );
 }
