@@ -43,7 +43,7 @@ const Home = ({ siteInfo, userInfo, experience, projects, skills, socials }: Pro
       <Head>
         <title>Alfredo Natal | Portfolio</title>
         <link rel="icon" href={urlFor(siteInfo?.favicon).url()} />
-        <meta name="theme-color" content="#EAB308"></meta>
+        <meta name="theme-color" content="#070707"></meta>
         <meta name="description" content="A personal portfolio for Alfredo Natal to illustrate his work and experience."></meta>
       </Head>
 
