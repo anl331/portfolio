@@ -37,13 +37,13 @@ const Home = ({ siteInfo, userInfo, experience, projects, skills, socials }: Pro
   return (
     <div
       className={`text-white snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth z-0  scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-white scrollbar-thumb-rounded-full scrollbar-thin ${
-        osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"
+        osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen" 
       }`}
     >
       <Head>
         <title>Alfredo Natal | Portfolio</title>
         <link rel="icon" href={urlFor(siteInfo?.favicon).url()} />
-        <meta name="theme-color" content="#020202"></meta>
+        <meta name="theme-color" content="#EAB308"></meta>
         <meta name="description" content="A personal portfolio for Alfredo Natal to illustrate his work and experience."></meta>
       </Head>
 
