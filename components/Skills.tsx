@@ -12,7 +12,7 @@ type Props = {
 export default function Skills({ skills }: Props) {
   return (
     <motion.div
-      className={`flex flex-col items-center  text-center justify-center mx-auto relative     ${osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"}`}
+      className={`flex flex-col items-center  text-center justify-around mx-auto relative     ${osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -26,7 +26,7 @@ export default function Skills({ skills }: Props) {
       </div>
 
       <div className="relative flex flex-col justify-center items-center flex-grow w-screen">
-        <h3 className="text-xs md:text-sm lg:text-lg max-w-sm uppercase pb-10 tracking-[1px] md:tracking-[3px] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#876512] via-[#DC42A4] to-[#5917B0]">Hover over a skill for current proficiency.</h3>
+        <h3 className=" max-w-[300px] md:text-sm lg:text-lg md:max-w-sm uppercase pb-10 tracking-[1px] md:tracking-[3px] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#876512] via-[#DC42A4] to-[#5917B0]">Hover over a skill for current proficiency.</h3>
 
         <div className="grid grid-cols-4 gap-3 ">
           {skills?.slice(0, skills.length / 2).map((skill) => (

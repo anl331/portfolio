@@ -34,7 +34,7 @@ export default function About({ userInfo }: Props) {
         <h2 className="uppercase tracking-[20px] text-white font-bold text-2xl md:text-4xl">About</h2>
       </div>
 
-      <div className="relative mx-auto space-y-5 w-full md:grid grid-cols-3 h-full flex flex-col items-center flex-1">
+      <div className="relative mx-auto space-y-5 w-full md:grid grid-cols-3 h-full flex flex-col items-center ">
 
        {/* Desktop Picture */}
         <motion.div
@@ -61,8 +61,8 @@ export default function About({ userInfo }: Props) {
 
 
         <div className="space-y-6 sm:px-10 col-span-2 flex flex-col justify-center ">
-          <h2 className="text-2xl font-semibold">
-            Here is a <span className=" pl-2 tracking-[10px] text-base font-bold text-transparent italic bg-clip-text bg-gradient-to-r from-[#876512] to-[#FFD481]">little</span> bit about me
+          <h2 className="text-2xl md:text-3xl font-semibold">
+            Here's a <span className=" pl-2 tracking-[10px] text-base font-bold align-middle">little</span> about me
           </h2>
           <div className={!isMobile ? "space-y-4" : "space-y-4 snap-end snap-always pb-6"}>
             <p className="text-sm lg:text-base">{userInfo.backgroundInformation}</p>

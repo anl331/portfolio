@@ -22,7 +22,7 @@ export default function ExperienceCard({ experience }: Props) {
         <div className="text-left pt-2">
           <h4 className="text-lg font-light sm:text-[1.4] md:text-[1.7rem] ">{experience.jobTitle}</h4>
           <h3 className="text-xl font-bold sm:text-[1.4] md:text-[1.7rem]  sm:pb-2">{experience.company}</h3>
-          <p className="uppercase text-gray-500 text-sm pt-1">
+          <p className="uppercase text-white/50 text-sm pt-1">
             {new Date(experience.dateStarted).toLocaleDateString("en-us", { year: "numeric", month: "short" })} - {" "}
             {experience.isCurrentlyWorkingHere ? "Present" : new Date(experience.dateEnded).toLocaleDateString("en-us", { year: "numeric", month: "short" })}
           </p>
@@ -31,7 +31,7 @@ export default function ExperienceCard({ experience }: Props) {
 
       <div className="z-10 px-4 space-y-1 flex flex-col text-left items-start w-full">
         <div className="flex flex-col ">
-          <p className="text-xs text-gray-500 py-2">Technology Used</p>
+          <p className="text-xs text-white/50 py-2">Technology Used</p>
           <div className="flex space-x-1 overflow-x-auto">
             {experience.technology.map((techStack) => (
               <Image key={techStack._id} width={36} height={36} objectFit="cover" objectPosition="center" src={urlFor(techStack.image).url()}  alt="" />
@@ -40,7 +40,7 @@ export default function ExperienceCard({ experience }: Props) {
         </div>
 
         <div>
-          <p className="text-xs text-gray-500 py-2">Highlights</p>
+          <p className="text-xs text-white/50 py-2">Highlights</p>
           <ul className="list-disc space-y-4 ml-3 text-xs sm:text-sm pl-4 pr-1 overflow-y-auto h-[250px] sm:h-[235px] overflow-mobile scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#303640] scrollbar-thumb-rounded-full scrollbar-thin">
             {experience.highlights.map((highlight, i) => (
               <li key={i}>{highlight}</li>
