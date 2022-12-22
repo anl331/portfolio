@@ -19,14 +19,6 @@ export default {
       type: "string",
     },
     {
-      name: "heroImage",
-      title: "HeroImage",
-      type: "image",
-      options: {
-        hotspot: true,
-      }
-    },
-    {
       name: "backgroundInformation",
       title: "Background Information Paragraph 1",
       type: "string",
@@ -37,8 +29,24 @@ export default {
       type: "string",
     },
     {
-      name: "profilePic",
-      title: "ProfilePic",
+      name: "heroImage",
+      title: "Hero Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      }
+    },
+    {
+      name: "aboutPic",
+      title: "About Pic",
+      type: "image",
+      options: {
+        hotspot: true,
+      }
+    },
+    {
+      name: "aboutPicMobile",
+      title: "Mobile About Pic",
       type: "image",
       options: {
         hotspot: true,
@@ -49,16 +57,6 @@ export default {
       title: "Email",
       type: "string",
     },
-    // {
-    //   name: "phoneNumber",
-    //   title: "PhoneNumber",
-    //   type: "string",
-    // },
-    // {
-    //   name: "address",
-    //   title: "Address",
-    //   type: "string",
-    // },
     {
       name: "socials",
       title: "Socials",

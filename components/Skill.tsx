@@ -17,7 +17,7 @@ export default function Skill({ skill, directionLeft }: Props) {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5, type: "tween", ease: "easeInOut" }}
         viewport={{ once: true }}
-        className="relative flex-shrink-0 w-14 h-14 lg:w-20 lg:h-20 mx-auto overflow-hidden rounded-full border border-gray-500 filter group-hover:grayscale group-hover:border-yellow-500 transition duration-300 ease-in-out"
+        className="relative flex-shrink-0 w-14 h-14 lg:w-20 lg:h-20 mx-auto overflow-hidden rounded-full border border-white filter group-hover:grayscale group-hover:border-yellow-500 transition duration-300 ease-in-out"
       >
         <Image layout="fill" objectFit="cover" objectPosition="center" src={urlFor(skill?.image).url()} alt="" />
       </motion.div>

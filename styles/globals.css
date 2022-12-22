@@ -4,19 +4,19 @@
 
 @layer components {
   .scaleBtn {
-    @apply active:scale-90 transition-all duration-150
+    @apply active:scale-90 transition-all duration-150;
   }
 
   .heroButton {
-    @apply px-2 sm:px-6 underline sm:no-underline sm:border sm:border-gray-700/70 rounded-full uppercase py-2 text-xs tracking-widest text-gray-500 hover:border-yellow-500/40 hover:text-yellow-500/70 cursor-pointer mx-1 underline-offset-4 scaleBtn;
+    @apply px-2 sm:px-6 underline sm:no-underline sm:border sm:border-white rounded-full uppercase py-2 text-xs tracking-widest text-white/50 hover:border-yellow-500/40 hover:text-yellow-500/70 cursor-pointer mx-1 underline-offset-4 scaleBtn;
   }
 
   .projectButton {
-    @apply px-6 border border-gray-700/70 rounded-full uppercase pb-2 pt-1 text-xs tracking-widest text-gray-500 hover:border-yellow-500/40 hover:text-yellow-500/70 cursor-pointer underline-offset-4 scaleBtn;
+    @apply px-6 border border-white rounded-full uppercase pb-2 pt-1 text-xs tracking-widest text-white/50 hover:border-yellow-500/40 hover:text-yellow-500/70 cursor-pointer underline-offset-4 scaleBtn;
   }
 
   .tw-input {
-    @apply block w-full appearance-none rounded border-none border-yellow-500 bg-[#2C313A] py-3 px-4 leading-tight focus:outline focus:outline-[1px] focus:outline-offset-2 focus:outline-yellow-300 focus:ring-offset-transparent disabled:animate-pulse;
+    @apply block w-full appearance-none rounded border-none border-yellow-500 bg-[#0A0A0A] py-3 px-4 leading-tight focus:outline focus:outline-[1px] focus:outline-offset-2 focus:outline-yellow-300 focus:ring-offset-transparent disabled:animate-pulse;
   }
   .tw-label {
     @apply py-1 block text-xs font-semibold uppercase tracking-wide;
@@ -29,8 +29,25 @@
 
 html {
   overflow: hidden;
-  background-color: #282c34;
+  overscroll-behavior: none;
+  background-color: #020202;
   scroll-behavior: smooth;
+}
+
+.clip-b-radius {
+  clip-path: inset(0 round 0 0 40px 40px);
+}
+
+.clip-t-radius {
+  clip-path: inset(0 round 40px 40px 0 0);
+}
+
+.outline-border {
+  background: linear-gradient(45deg, #775b07, #c29950, #c43c93, #410f73, #8c0cb5, #ecc5e7);
+}
+
+.outer-card {
+  border-radius: calc(8px + 5px);
 }
 
 .overflow-mobile {
@@ -73,8 +90,5 @@ input:-webkit-autofill:active {
 }
 
 @supports (-webkit-touch-callout: none) {
-  body {
-    /* The hack for Safari */
-    height: -webkit-fill-available;
-  }
+  height: -webkit-fill-available;
 }

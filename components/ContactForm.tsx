@@ -99,11 +99,11 @@ export default function ContactForm({}: Props) {
 
         {recaptchaNeeded && <ReCAPTCHA className="mb-5" ref={captcha} sitekey={siteKey} size="invisible" />}
 
-        <div className="md:flex md:items-center">
+        <div className="md:flex md:items-center mt-4">
           <div className="w-full">
             <button
               type="submit"
-              className="shadow bg-yellow-500/90 hover:bg-yellow-500 focus:shadow-outline focus:outline-none font-bold py-3 px-12 rounded  active:scale-90 transition duration-150 cursor-pointer w-full disabled:cursor-not-allowed disabled:active:scale-100 disabled:animate-pulse h-12"
+              className="shadow bg-yellow-500/90 hover:bg-yellow-500 bg-gradient-to-r from-[#876512] via-[#DC42A4] to-[#5917B0] focus:shadow-outline focus:outline-none font-bold py-3 px-12 rounded  active:scale-90 transition duration-150 cursor-pointer w-full disabled:cursor-not-allowed disabled:active:scale-100 disabled:animate-pulse h-12"
               disabled={btnToggle ? true : false}>
               {btnToggle ? <div className="spinner-border animate-spin inline-block w-5 h-5 border-4 rounded-full" />  : "Send" }
             </button>

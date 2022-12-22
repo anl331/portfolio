@@ -21,37 +21,48 @@ export default function About({ userInfo }: Props) {
 
   return (
     <motion.div
-      className={`flex flex-col items-center justify-center mx-auto relative px-7 md:text-left text-center max-w-7xl sm:pb-10 snap-y snap-mandatory w-screen ${
+      className={`flex flex-col items-center justify-start mx-auto relative px-7 md:text-left text-center max-w-7xl snap-y snap-mandatory w-screen ${
         osVersion >= "15.4" && isIOS ? "min-h-[100svh]" : "min-h-screen"
       }`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }} 
       transition={{ duration: 1 }}
-      // viewport={{ once: true }}
+      viewport={{ once: true }}
     >
-      <div className="h-20 " />
 
-      <div className="flex flex-col-reverse pl-5 pb-5">
-        <h2 className="uppercase tracking-[16px] text-gray-500 text-2xl">About</h2>
+      <div className="relative flex flex-col-reverse pl-5 pb-5 min-h-[9rem]">
+        <h2 className="uppercase tracking-[20px] text-white font-bold text-2xl md:text-4xl">About</h2>
       </div>
 
-      <div className="relative mx-auto space-y-5 w-full md:grid grid-cols-3">
+      <div className="relative mx-auto space-y-5 w-full md:grid grid-cols-3 h-full flex flex-col items-center flex-1">
 
+       {/* Desktop Picture */}
         <motion.div
-          className="relative h-48 w-48 sm:h-60 sm:w-60 md:h-max md:w-full md:aspect-[3/4] mx-auto rounded-full overflow-hidden md:rounded-lg my-auto"
+          className="hidden md:block left-6 relative mx-auto overflow-hidden my-auto "
           initial={{ x: -200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <Image layout="fill" objectFit="cover" objectPosition="top" src={urlFor(userInfo.profilePic).url()} alt=""  />
+          <Image className="scale-95" width={400} height={552}  src={urlFor(userInfo.aboutPic).url()} alt=""  />
+        </motion.div>
+
+       {/* Mobile Picture */}
+        <motion.div
+          className="flex md:hidden "
+          initial={{ x: -200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <Image  width={250} height={250}  src={urlFor(userInfo.aboutPicMobile).url()} alt=""  />
         </motion.div>
 
 
 
         <div className="space-y-6 sm:px-10 col-span-2 flex flex-col justify-center ">
-          <h2 className="text-2xl font-semibold sm:text-[1.4] md:text-[1.7rem] lg:text-4xl">
-            Here is <span className="underline underline-offset-4 md:underline-offset-8 decoration-yellow-500">some</span> background
+          <h2 className="text-2xl font-semibold">
+            Here is a <span className=" pl-2 tracking-[10px] text-base font-bold text-transparent italic bg-clip-text bg-gradient-to-r from-[#876512] to-[#FFD481]">little</span> bit about me
           </h2>
           <div className={!isMobile ? "space-y-4" : "space-y-4 snap-end snap-always pb-6"}>
             <p className="text-sm lg:text-base">{userInfo.backgroundInformation}</p>

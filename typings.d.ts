@@ -21,12 +21,17 @@ export interface UserInfo extends SanityBody {
   heroImage: Image;
   firstName: string;
   lastName: string;
-  profilePic: Image;
+  heroImage: Image;
+  aboutPic: Image;
+  aboutPicMobile: Image;
   role: string;
 }
 
 export interface SiteInfo extends SanityBody {
     _type: "siteInfo";
+    heroGradient: Image;
+    projectGradient: Image;
+    sitePattern: Image;
     favicon: Image;
 }
 

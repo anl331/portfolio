@@ -15,18 +15,19 @@ export default function Projects({ projects }: Props) {
 
   return (
     <motion.div
-      className={`relative flex flex-col items-center text-center justify-center mx-auto ${osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"}`}
+      className={`bg-transarent bg-gradient-to-b to-[#060606] rounded-tl-lg relative flex flex-col items-center text-center justify-center mx-auto ${osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.75 }}
+      viewport={{ once: true }}
     >
       <div className="h-20 " />
 
       <div className="flex flex-col-reverse pl-5 ">
-        <h3 className="uppercase tracking-[16px] text-gray-500 text-2xl">Projects</h3>
+        <h3 className="z-10 uppercase tracking-[20px] text-white font-bold text-2xl md:text-4xl">Projects</h3>
       </div>
 
-      <div className=" relative flex items-center flex-grow w-full snap-x snap-mandatory scrollbar scrollbar-track-transparent scrollbar-thumb-[#2C313A] scrollbar-thumb-rounded-full z-20 ">
+      <div className=" overflow-y-hidden relative flex items-center flex-grow w-full snap-x snap-mandatory scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white scrollbar-thumb-rounded-full z-20 md:px-20">
         {sortedPorjects?.map((project, i) => (
           <div className=" relative w-screen flex-shrink-0 snap-center snap-always flex flex-col space-y-5 items-center justify-center px-6" key={i}>
             <motion.div
@@ -34,9 +35,9 @@ export default function Projects({ projects }: Props) {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="relative max-w-[80%] sm:max-w-[35%] h-auto w-full aspect-[5/3]"
+              className="relative "
             >
-              <Image layout="fill" objectFit="cover" objectPosition="center" src={urlFor(project.image).url()} alt="" />
+              <Image width={475} height={500} src={urlFor(project.image).url()} alt="" />
             </motion.div>
 
             <div className="max-w-3xl space-y-4">
@@ -48,7 +49,7 @@ export default function Projects({ projects }: Props) {
               </h4>
 
               <div className="flex flex-col items-center justify-center space-y-1">
-                <p className="text-xs text-gray-500">Tech Stacked Used</p>
+                <p className="text-xs text-white">Tech Stacked Used</p>
                 <div className="flex items-center justify-center space-x-2">
                   {project.technologies.map((techStack) => (
 
@@ -71,7 +72,9 @@ export default function Projects({ projects }: Props) {
         ))}
       </div>
 
-      <div className="w-full absolute top-[35%] sm:top-[40%] bg-[#2C313A] left-0 h-[300px] sm:h-[400px] -skew-y-[6deg] z-0"></div>
+
+      <div className={`clip-t-radius bg-[url('https://cdn.sanity.io/images/6j55bdp8/production/e317aa95c8e7b131bda8644b7d7a1e240325347d-1512x926.png')] bg-no-repeat bg-top bg-cover absolute w-full max-w-screen-2xl h-full top-2`}/>
+
     </motion.div>
   );
 }

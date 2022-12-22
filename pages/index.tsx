@@ -34,29 +34,24 @@ type Props = {
 };
 
 const Home = ({ siteInfo, userInfo, experience, projects, skills, socials }: Props) => {
-  const queryEncode = encodeURIComponent(`*[ _type == "userInfo"][0]`);
-  const url = `https://6j55bdp8.api.sanity.io/v2021-10-21/data/query/production?query=${queryEncode}`;
-
-  console.log(url)
-
   return (
     <div
-      className={`bg-[#282C34] text-white snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth z-0  scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#303640] scrollbar-thumb-rounded-full scrollbar-thin ${
+      className={`text-white snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth z-0  scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-white scrollbar-thumb-rounded-full scrollbar-thin ${
         osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"
       }`}
     >
       <Head>
         <title>Alfredo Natal | Portfolio</title>
         <link rel="icon" href={urlFor(siteInfo?.favicon).url()} />
-        <meta name="theme-color" content="#282C34"></meta>
+        <meta name="theme-color" content="#020202"></meta>
         <meta name="description" content="A personal portfolio for Alfredo Natal to illustrate his work and experience."></meta>
       </Head>
 
-      <main>
+      <main className="max-w-screen-2xl mx-auto bg-[#020202] bg-[url('https://cdn.sanity.io/images/6j55bdp8/production/9f1ce3168c14a192160707553ebcb120bb2eab3c-466x349.png')] bg-blend-lighten bg-[length:800px_800px]">
         <Header socials={socials} />
 
         <section id="hero" className="snap-start snap-always">
-          <Hero userInfo={userInfo} />
+          <Hero userInfo={userInfo}  siteInfo={siteInfo}/>
         </section>
 
         <section id="about" className="snap-start snap-always">

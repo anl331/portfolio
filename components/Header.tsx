@@ -11,7 +11,7 @@ type Props = {
 export default function Header({ socials }: Props) {
   const workSocials = socials.filter((social) => ['LinkedIn', 'GitHub'].includes(social.title));
   return (
-    <header className="sticky top-0 px-5 flex items-start justify-between max-w-7xl mx-auto z-50 xl:items-center bg-gradient-to-b from-[#282C34] via-[#282C34]/95 h-20 pt-3 min-w-full ">
+    <header className="sticky top-0 px-10 flex items-start justify-between mx-auto z-50 xl:items-center bg-transparent h-20 pt-3 max-w-screen-2xl">
       <motion.div
         className="flex flex-row items-center"
         initial={{
@@ -31,12 +31,12 @@ export default function Header({ socials }: Props) {
         viewport={{ once: true }}
       >
         {workSocials.map((social) => (
-          <SocialIcon key={social._id} url={social.url} bgColor="transparent" fgColor="currentColor" className="text-gray-500 hover:text-yellow-500 scaleBtn"/>
+          <SocialIcon key={social._id} url={social.url} bgColor="transparent" fgColor="currentColor" className="text-white hover:text-yellow-500 scaleBtn"/>
         ))}
       </motion.div>
 
       <motion.div
-        className="flex flex-row items-center text-gray-500 cursor-pointer group"
+        className="flex flex-row items-center text-white cursor-pointer group"
         initial={{
           x: 500,
           opacity: 0,
@@ -53,7 +53,7 @@ export default function Header({ socials }: Props) {
         }}
         viewport={{ once: true }}
       >
-        <SocialIcon url="#contact" network="email" bgColor="transparent" fgColor="currentColor" className="text-gray-500 group-hover:text-yellow-500 scaleBtn" />
+        <SocialIcon url="#contact" network="email" bgColor="transparent" fgColor="currentColor" className="text-white group-hover:text-yellow-500 scaleBtn" />
         <a href="#contact"aria-label="Get In Touch"><p className="uppercase hidden sm:inline-flex text-sm scaleBtn group-hover:text-yellow-500">Get In Touch</p></a>
       </motion.div>
     </header>
