@@ -13,7 +13,7 @@ export default function Header({ socials }: Props) {
   return (
     <header className="sticky top-0 px-4 md:px-10 flex items-start justify-between mx-auto z-50 xl:items-center bg-transparent h-20 pt-3 max-w-screen-2xl">
       <motion.div
-        className="flex flex-row items-center"
+        className="flex flex-row items-center relative right-4"
         initial={{
           x: -500,
           opacity: 0,

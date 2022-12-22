@@ -27,14 +27,14 @@ export default function Hero({ userInfo, siteInfo }: Props) {
     >
       {/* <BackGroundCircles siteInfo={siteInfo}/> */}
       <div className="relative space-y-8 z-10">
-        <motion.div initial={{ scale: 2, opacity: 0, rotate: -45 }} whileInView={{ scale: 1, opacity: 1, rotate: 0 }} transition={{ duration: 0.40, delay: 2.2 }} viewport={{ once: true }}>
+        <motion.div initial={{ scale: 2, opacity: 0, rotate: -45 }} whileInView={{ scale: 1, opacity: 1, rotate: 0 }} transition={{ duration: 0.40, delay: 2 }} viewport={{ once: true }}>
           <Image className=" shrink  mx-auto" width={200} height={200} src={urlFor(userInfo.heroImage).url()} alt="" />
         </motion.div>
 
         <div className="w-screen flex flex-col items-center justify-center">
           <motion.h2
             className=" text-sm md:text-base font-semibold uppercase pb-3 tracking-[5px] md:tracking-[10px]"
-            initial={{ scale: 0, opacity: 0, }}
+            initial={{ scale: 1, opacity: 0, }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: 1 }}
             viewport={{ once: true }}
@@ -70,15 +70,10 @@ export default function Hero({ userInfo, siteInfo }: Props) {
       </div>
 
       <motion.div
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-        }}
-        transition={{
-          duration: 2.9,
-        }}
+        initial={{ opacity: 0, }}
+        animate={{ opacity: 1, }}
+        transition={{ duration: 2.9, }}
+        viewport={{ once: true }}
         className={`clip-b-radius bg-[url('https://cdn.sanity.io/images/6j55bdp8/production/7d0c18804fff5f8894d156cfb98a3b59effd59cd-1512x900.png')] bg-no-repeat bg-bottom bg-contain md:bg-cover absolute w-screen max-w-screen-2xl h-full bottom-2`}
       />
     </div>
