@@ -64,9 +64,9 @@ export default function About({ userInfo }: Props) {
           <h2 className="text-2xl md:text-3xl font-semibold">
             Here's a <span className=" pl-2 tracking-[10px] text-base font-bold align-middle">little</span> about me
           </h2>
-          <div className={!isMobile ? "space-y-4" : "space-y-4 snap-end snap-always pb-6"}>
+          <div className={!isMobile ? "space-y-4 text-justify" : "space-y-4 snap-end snap-always pb-6 text-justify"}>
             <p className="text-sm lg:text-base">{userInfo.backgroundInformation}</p>
-            <p className="text-sm lg:text-base -">{userInfo.backgroundInformation2}</p>
+            <p className="text-sm lg:text-base ">{userInfo.backgroundInformation2}</p>
           </div>
         </div>
       </div>
