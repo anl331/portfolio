@@ -15,7 +15,7 @@ export default function Projects({ projects }: Props) {
 
   return (
     <motion.div
-      className={`bg-transarent bg-gradient-to-b to-[#060606] rounded-tl-lg relative flex flex-col items-center text-center justify-around mx-auto ${osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"}`}
+      className={`bg-transparent from-[#070707] via-[#070707] bg-gradient-to-t rounded-tl-lg relative flex flex-col items-center text-center justify-around mx-auto ${osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.75 }}
@@ -73,7 +73,7 @@ export default function Projects({ projects }: Props) {
       </div>
 
 
-      <div className={`clip-t-radius bg-[url('https://cdn.sanity.io/images/6j55bdp8/production/e317aa95c8e7b131bda8644b7d7a1e240325347d-1512x926.png')] bg-no-repeat bg-top bg-cover absolute w-full max-w-screen-2xl h-full top-2`}/>
+      <div className={`clip-t-radius bg-[url('https://cdn.sanity.io/images/6j55bdp8/production/e317aa95c8e7b131bda8644b7d7a1e240325347d-1512x926.png')] bg-no-repeat bg-top bg-contain lg:bg-cover absolute w-full max-w-screen-2xl h-full top-2`}/>
 
     </motion.div>
   );

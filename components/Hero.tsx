@@ -27,7 +27,7 @@ export default function Hero({ userInfo, siteInfo }: Props) {
     >
       {/* <BackGroundCircles siteInfo={siteInfo}/> */}
       <div className="relative space-y-8 z-10">
-        <motion.div initial={{ scale: 2, opacity: 0, rotate: -45 }} whileInView={{ scale: 1, opacity: 1, rotate: 0 }} transition={{ duration: 0.40, delay: 2 }} viewport={{ once: true }}>
+        <motion.div initial={{ scale: 2, opacity: 0, rotate: -45 }} whileInView={{ scale: 1, opacity: 1, rotate: 0 }} transition={{ duration: 0.60, delay: 2 }} viewport={{ once: true }}>
           <Image className=" shrink  mx-auto" width={200} height={200} src={urlFor(userInfo.heroImage).url()} alt="" />
         </motion.div>
 
