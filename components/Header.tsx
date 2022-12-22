@@ -51,7 +51,7 @@ export default function Header({ socials }: Props) {
           duration: 1.5,
           delay: 1.3,
         }}
-        viewport={{ once: true }}
+        viewport={{ once: true }} 
       >
         <SocialIcon url="#contact" network="email" bgColor="transparent" fgColor="currentColor" className="text-white group-hover:text-yellow-500 scaleBtn" />
         <a href="#contact"aria-label="Get In Touch"><p className="uppercase hidden sm:inline-flex text-sm scaleBtn group-hover:text-yellow-500">Get In Touch</p></a>
