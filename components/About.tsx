@@ -34,7 +34,7 @@ export default function About({ userInfo }: Props) {
         <h2 className="uppercase tracking-[20px] text-white font-bold text-2xl md:text-4xl">About</h2>
       </div>
 
-      <div className="relative mx-auto space-y-5 w-full md:grid grid-cols-3 h-full flex flex-col items-center border flex-1">
+      <div className="relative mx-auto space-y-5 w-full md:grid grid-cols-3 h-full flex flex-col items-center flex-1">
 
        {/* Desktop Picture */}
         <motion.div
