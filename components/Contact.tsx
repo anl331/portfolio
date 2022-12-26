@@ -9,12 +9,8 @@ type Props = {};
 
 export default function Contact({}: Props) {
   return (
-    <motion.div
+    <div
       className={`relative flex flex-col items-center text-center justify-center mx-auto  bg-[#070707] ${osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"}`}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.75 }}
     >
       <div className="h-20"/>
 
@@ -25,6 +21,6 @@ export default function Contact({}: Props) {
       <div className=" relative flex items-center flex-grow text-left">
         <ContactForm />
       </div>
-    </motion.div>
+    </div>
   );
 }
