@@ -23,8 +23,8 @@ export default function Skill({ skill, directionLeft }: Props) {
       </motion.div>
 
       <div className="absolute transition opacity-0 group-hover:opacity-80 duration-300 ease-in-out rounded-full">
-        <div className="flex items-center justify-center bg-[#2C313A] rounded-full border border-yellow-500  w-14 h-14 lg:w-20 lg:h-20">
-          <p className="sm:text-xl font-bold opacity-100">{skill.progress}%</p> 
+        <div className="flex items-center justify-center backdrop-blur-lg bg-[#222222] rounded-full border border-yellow-500  w-14 h-14 lg:w-20 lg:h-20">
+          <p className="sm:text-xl font-bold opacity-100">{skill.progress}%</p>
         </div>
       </div>
     </div>

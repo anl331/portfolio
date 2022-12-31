@@ -19,13 +19,12 @@ export default function About({ userInfo }: Props) {
     }
   }, []);
 
+
   return (
     <motion.div
-      className={`flex flex-col items-center justify-start mx-auto relative px-7 md:text-left text-center max-w-7xl snap-y snap-mandatory w-screen ${
-        osVersion >= "15.4" && isIOS ? "min-h-[100svh]" : "min-h-screen"
-      }`}
+      className={`flex flex-col items-center justify-start mx-auto relative px-7 md:text-left text-center max-w-7xl snap-y snap-mandatory w-screen ${ osVersion >= "15.4" && isIOS ? "min-h-[100svh]" : "min-h-screen" }`}
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }} 
+      whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       viewport={{ once: true }}
     >
@@ -38,7 +37,7 @@ export default function About({ userInfo }: Props) {
 
        {/* Desktop Picture */}
         <motion.div
-          className="hidden md:block left-6 relative mx-auto overflow-hidden my-auto "
+          className="hidden md:block left-6 relative mx-auto overflow-hidden my-auto"
           initial={{ x: -200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
