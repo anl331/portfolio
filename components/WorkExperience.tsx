@@ -4,7 +4,10 @@ import ExperienceCard from "./ExperienceCard";
 import { Experience } from "../typings";
 import { isIOS, osVersion } from "react-device-detect";
 import _, { sortBy } from "underscore";
-
+import Dot from "./Dot";
+import Carousel from "./Carousel";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 
 type Props = {
   experience: Experience[];
@@ -13,11 +16,28 @@ type Props = {
 export default function WorkExperience({ experience }: Props) {
   const sortedExperiences = _.sortBy(experience, "dateStarted").reverse();
 
+  const options = {
+    mouseTracking: true,
+    autoWidth: true,
+  };
 
+  const responsive = {
+    0: { items: 1 },
+    678: { items: 2, itemsFit: 'fill' },
+    1240: { items: 3, itemsFit: "fill" },
+  };
+
+  const handleDragStart = (e) => e.preventDefault();
+
+  const items = [
+    <img src="path-to-img" onDragStart={handleDragStart} role="presentation" />,
+    <img src="path-to-img" onDragStart={handleDragStart} role="presentation" />,
+    <img src="path-to-img" onDragStart={handleDragStart} role="presentation" />,
+  ];
 
   return (
     <motion.div
-      className={`grid grid-rows-[17%_1fr] justify-center ${osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"}`}
+      className={`relative grid grid-rows-[8rem_1fr] justify-center ${osVersion >= "15.4" && isIOS ? "h-[100svh]" : "h-screen"}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -28,13 +48,20 @@ export default function WorkExperience({ experience }: Props) {
       </div>
 
       <div
-        className={`my-auto grid grid-flow-col w-full overflow-y-hidden overflow-x-auto snap-x snap-mandatory scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-transparent scrollbar-thumb-rounded-full scrollbar-thin max-w-screen-xl`}
+        className={`w-screen snap-x snap-mandatory overflow-x-hidden scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-transparent scrollbar-thumb-rounded-full scrollbar-thin max-w-screen-xl select-none my-auto justify-center`}
       >
-        {sortedExperiences?.map((experience) => (
-          <ExperienceCard key={experience._id} experience={experience} />
-        ))}
+        <AliceCarousel className=""
+          responsive={responsive}
+          controlsStrategy="alternate"
+          mouseTracking
+          disableButtonsControls
+          keyboardNavigation
+        >
+          {sortedExperiences?.map((experience, cardIndex) => (
+            <ExperienceCard key={experience._id} experience={experience} />
+          ))}
+        </AliceCarousel>
       </div>
     </motion.div>
-
   );
 }

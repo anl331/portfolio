@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "react-alice-carousel/lib/alice-carousel.css";
 
 @layer components {
   .scaleBtn {
@@ -92,3 +93,23 @@ input:-webkit-autofill:active {
 @supports (-webkit-touch-callout: none) {
   height: -webkit-fill-available;
 }
+
+.alice-carousel__dots {
+  margin: 0px 3px 5px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alice-carousel__dots-item:not(.__custom).__active {
+  background-color: #ffe800 !important;
+  width: 12px !important;
+  height: 12px !important;
+  transition-duration: 150ms;
+  transition-property: all;
+}
+
+.alice-carousel__dots-item:not(.__custom):hover {
+  background-color: #ffe800 !important;
+}
+ 
