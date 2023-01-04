@@ -15,24 +15,11 @@ type Props = {
 export default function WorkExperience({ experience }: Props) {
   const sortedExperiences = _.sortBy(experience, "dateStarted").reverse();
 
-  const options = {
-    mouseTracking: true,
-    autoWidth: true,
-  };
-
   const responsive = {
     0: { items: 1 },
     678: { items: 2, itemsFit: 'fill' },
     1240: { items: 3, itemsFit: "fill" },
   };
-
-  const handleDragStart = (e) => e.preventDefault();
-
-  const items = [
-    <img src="path-to-img" onDragStart={handleDragStart} role="presentation" />,
-    <img src="path-to-img" onDragStart={handleDragStart} role="presentation" />,
-    <img src="path-to-img" onDragStart={handleDragStart} role="presentation" />,
-  ];
 
   return (
     <motion.div
