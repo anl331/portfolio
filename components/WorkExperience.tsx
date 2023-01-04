@@ -5,7 +5,6 @@ import { Experience } from "../typings";
 import { isIOS, osVersion } from "react-device-detect";
 import _, { sortBy } from "underscore";
 import Dot from "./Dot";
-import Carousel from "./Carousel";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
