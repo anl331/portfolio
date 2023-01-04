@@ -27,7 +27,7 @@ export default function Projects({ projects }: Props) {
         <h3 className="z-10 uppercase tracking-[20px] text-white font-bold text-2xl md:text-4xl">Projects</h3>
       </div>
 
-      <div className=" overflow-y-hidden relative flex items-center flex-grow w-full snap-x snap-mandatory scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#52208C] scrollbar-thumb-rounded-full z-20 md:px-20">
+      <div className=" overflow-y-hidden relative flex items-center flex-grow w-full snap-x snap-mandatory scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white scrollbar-thumb-rounded-full z-20 md:px-20">
         {sortedPorjects?.map((project, i) => (
           <div className=" relative w-screen flex-shrink-0 snap-center snap-always flex flex-col space-y-5 items-center justify-center px-6" key={i}>
             <motion.div
