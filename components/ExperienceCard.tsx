@@ -10,7 +10,7 @@ type Props = {
 
 export default function ExperienceCard({ experience }: Props) {
   return (
-    <article className="relative flex flex-col items-center flex-shrink-0 max-h-[480px] min-h-[480px] sm:max-h-[530px] sm:min-h-[530px] w-[350px] sm:w-[400px] md:w-[430px] snap-always snap-center px-3 py-5 pb-8 bg-[#0d0d0d] outline-border space-y-4 mb-2 scale-[.95] outer-card">
+    <article className="first:ml-5 md:first:ml-2 last:mr-4 md:last:mr-2 relative flex flex-col items-center flex-shrink-0 max-h-[480px] min-h-[480px] sm:max-h-[530px] sm:min-h-[530px] w-[90vw] sm:w-min snap-always snap-center px-3 py-5 pb-8 bg-[#0d0d0d] outline-border space-y-4 mb-2 scale-[.93] outer-card">
       <div className="z-10 relative px-5 items-center flex w-full ">
 
         <div
@@ -41,7 +41,7 @@ export default function ExperienceCard({ experience }: Props) {
 
         <div>
           <p className="text-xs text-white/50 py-2">Highlights</p>
-          <ul className="list-disc space-y-4 ml-3 text-xs sm:text-sm pl-4 pr-1 overflow-y-auto h-[250px] sm:h-[235px] overflow-mobile scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-[#303640] scrollbar-thumb-rounded-full scrollbar-thin">
+          <ul className="list-disc space-y-4 text-xs sm:text-sm pl-8 pr-1 overflow-y-auto overflow-x-auto h-[200px] md:h-[240px] overflow-mobile scrollbar-track-transparent scrollbar-thumb-white scrollbar-thumb-rounded-full scrollbar-thin px-20 w-full" >
             {experience.highlights.map((highlight, i) => (
               <li key={i}>{highlight}</li>
             ))}
