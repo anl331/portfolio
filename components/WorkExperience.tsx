@@ -36,7 +36,7 @@ export default function WorkExperience({ experience }: Props) {
       <div
         className={`w-screen snap-x snap-mandatory overflow-x-hidden scrollbar-track-transparent transparent-scrollbar scrollbar-thumb-transparent scrollbar-thumb-rounded-full scrollbar-thin max-w-screen-xl select-none my-auto justify-center`}
       >
-        <AliceCarousel className=""
+        <AliceCarousel
           responsive={responsive}
           controlsStrategy="alternate"
           mouseTracking
