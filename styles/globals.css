@@ -101,15 +101,14 @@ input:-webkit-autofill:active {
   align-items: center;
 }
 
+.alice-carousel__dots-item:not(.__custom){
+  background-color: #fff !important;
+}
+
 .alice-carousel__dots-item:not(.__custom).__active {
   background-color: #ffe800 !important;
-  width: 12px !important;
-  height: 12px !important;
-  transition-duration: 150ms;
-  transition-property: all;
 }
 
 .alice-carousel__dots-item:not(.__custom):hover {
   background-color: #ffe800 !important;
 }
- 
